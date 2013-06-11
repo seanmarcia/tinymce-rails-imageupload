@@ -34,13 +34,14 @@
 
           if(ret.length) {
             var json = JSON.parse(ret);
-            var imgstr = "<br><img src='" + json["image"]["url"] + "'";
+            var imgstr = "<br><a href='" + json["image"]["url"] + "'";
 
-            if(json["image"]["height"])
-              imgstr += " height='" + json["image"]["height"] + "'";
-            if(json["image"]["width"])
-              imgstr += " width='"  + json["image"]["width"]  + "'";
+            imgstr += " rel='" + "lightbox" + "'";
+            imgstr += " title='" + json["image"]["title"] + "'";
+            imgstr += "/>";
+            imgstr += "<img src='" + json["image"]["url"] + "'";
 
+           // imgstr += " rel='" + "lightbox" + "'";
             imgstr += "/>";
 
             tinyMCE.execCommand('mceInsertContent', false, imgstr);
