@@ -34,12 +34,12 @@
 
           if(ret.length) {
             var json = JSON.parse(ret);
-            var imgstr = "<br><a href='" + json["image"]["original"] + "'";
+            var imgstr = "<br><a href='" + json["image"]["url"] + "'";
 
             imgstr += " rel='" + "lightbox" + "'";
             imgstr += " title='" + json["image"]["title"] + "'";
             imgstr += "/>";
-            imgstr += "<img src='" + json["image"]["url"] + "'";
+            imgstr += "<img src='" + json["image"]["original"] + "'";
 
            // imgstr += " rel='" + "lightbox" + "'";
             imgstr += "/>";
